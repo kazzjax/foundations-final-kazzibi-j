@@ -1,1 +1,66 @@
+/* Values, Data Types, and Operations:  
+One example is using strings of text data to record events in game sessions. 
+USER selects PREV SESSION, EVENTS are Displayed
+*/
+let session012 = ["retrieved cursed ring ", "confronted Milkuna ", "imprisoned in Starshire "]; /* each
+entry is a string */
+console.log(`Previous game events: ${session012}`); //Displays a log containing an array of strings representing game events
 
+
+/* Stringing Characters Together:
+An example is template literals that use string interpolation to embed variables, to streamline code and reduce concatenation
+USER selects WEAPONS AND ARMOR to DISPLAY before battle. INVENTORY categories WEAPONS and ARMOR is LOGGED.
+*/
+let inventoryAll = [
+    ["sword", "dagger"],
+    ["shield", "chainmail", "helmet"],
+    ["ring of speed", "ancient quill"]];
+let weapons = inventoryAll[1];//assigns variable to be used
+let armor = inventoryAll[2];//assigns variable to be used
+let miscItems = inventoryAll[3];
+console.log(`Players Current Weapons and Armor: ${weapons},${armor}`);/*uses template literal with `` 
+to avoid need for concatenation and reduces code using the embedded expresssions, displays the items
+from the first two rows in place of the expressions*/
+
+
+/* Control Structures and Logic:
+One example is using if/else to log a character status value such as whether a player is cursed
+USER selects CURSE CHECK, if current STATUS includes CURSE value is Displayed
+*/
+let playerTwoStatus = "cursed";
+if (playerTwoStatus.includes("cursed")) //states condition if term cursed is applicable
+{console.log("Player is Cursed!");} //logs status "Player is Cursed!"
+else {console.log("Player is not cursed.");} //else logs alternate message when "if" does not apply
+
+
+/*Working with Loops 
+An example is using a security feature such as a password check with a Do/While loop since it will
+execute before the condition being met
+USER inputs password attempt, if EVALUATED as TRUE, DISPLAYS welcome message
+*/
+let password;
+do {password = prompt(`Please enter your password: (HINT, it is "password")`);} //this is executed first before Boolean value is evaluated
+while (password !== "password"); // boolean expression to evaulate
+console.log("Welcome!"); //displays upon successful entry of password
+
+
+/* Building Arrays 
+An example is to create arrays with empty values to represent an intentional lack of input,
+for instance a player's inventory that has not yet had any items added yet
+INVENTORY represents collected ITEMS, starting at EMPTY
+*/
+let playerOneItems = []; //this is actually an array intentionally ommitting input
+console.log(playerOneItems); //this returns [], the blank array
+console.log(typeof playerOneItems);//confirms that this is an object
+console.log(playerOneItems.push("sword"));//confirming new length "1" as value added
+
+
+/* Using Arrays 
+An example is using shift to remove the first listed value from an array for creating
+an objective list and completing the pending task
+USER accessess OBJECTIVES, selects COMPLETE for pending OBJECTIVE, FIRST OBJECTIVE is removed
+*/
+let objectiveList = ["locate Falstiva", "defeat Prince Jelston", "return crown to Endren"];
+let completed = objectiveList.shift(); // this is applying shift to the defined variable for the object array
+console.log(objectiveList);/* verifies that objective has been 
+logs "defeat Prince Jelston", "return crown to Endren"
